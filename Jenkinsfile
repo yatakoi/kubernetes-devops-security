@@ -2,6 +2,7 @@ pipeline {
   agent any
 
   stages {
+
     stage('Build Artifact - Maven') {
       steps {
         sh "mvn clean package -DskipTests=true"
@@ -20,6 +21,7 @@ pipeline {
         }
       }
     }
+
     stage('Docker Build and Push') {
       steps {
         withDockerRegistry([credentialsId: "docker-hub", url: ""]) {
@@ -28,6 +30,6 @@ pipeline {
           sh 'docker push yatakoi/numeric-app:""$GIT_COMMIT""'
         }
       }
-    }    
+    }
   }
 }

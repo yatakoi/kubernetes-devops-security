@@ -26,6 +26,7 @@ pipeline {
           sh 'printenv'
           sh 'docker build -t yatakoi/numeric-app:""$GIT_COMMIT"" .'
           sh 'docker push yatakoi/numeric-app:""$GIT_COMMIT""'
+        }
       }
     }    
   }

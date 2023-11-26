@@ -1,6 +1,15 @@
 pipeline {
   agent any
 
+  environment {
+    deploymentName = "devsecops"
+    containerName = "devsecops-container"
+    serviceName = "devsecops-svc"
+    imageName = "yatakoi/numeric-app:${GIT_COMMIT}"
+    applicationURL = "http://jenkins.max-ko.ru/"
+    applicationURI = "/increment/99"
+  }
+
   stages {
 
     stage('Build Artifact - Maven') {
@@ -102,8 +111,7 @@ pipeline {
     stage('Kubernetes Deployment - DEV') {
       steps {
 //        withKubeConfig([credentialsId: 'kubeconfig']) {
-          sh "sed -i 's#replace#yatakoi/numeric-app:${GIT_COMMIT}#g' k8s_deployment_service.yaml"
-          sh "kubectl apply -f k8s_deployment_service.yaml"
+          sh "bash k8s-deployment.sh"
         //}
       }
     }

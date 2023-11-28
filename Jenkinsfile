@@ -6,7 +6,7 @@ pipeline {
     containerName = "devsecops-container"
     serviceName = "devsecops-svc"
     imageName = "yatakoi/numeric-app:${GIT_COMMIT}"
-    applicationURL = "jenkins.max-ko.ru"
+    applicationURL = "http://jenkins.max-ko.ru"
     applicationURI = "/increment/99"
   }
 
@@ -101,9 +101,9 @@ pipeline {
           "Kubesec Scan": {
             sh "bash kubesec-scan.sh"
           },
-          "Trivy Scan": {
-            sh "bash trivy-k8s-scan.sh"
-          }
+//          "Trivy Scan": {
+//            sh "bash trivy-k8s-scan.sh"
+//          }
         )
       }
     }

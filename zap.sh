@@ -1,6 +1,6 @@
 #!/bin/bash
 
-URL_PORT=$(minikube service devsecops-svc --url)
+URL_PORT=$(sudo -i -u max bash -c "/usr/bin/minikube service devsecops-svc --url")
 
 # first run this
 chmod 777 $(pwd)

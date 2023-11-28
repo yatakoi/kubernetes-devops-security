@@ -6,7 +6,7 @@ pipeline {
     containerName = "devsecops-container"
     serviceName = "devsecops-svc"
     imageName = "yatakoi/numeric-app:${GIT_COMMIT}"
-    applicationURL = "http://jenkins.max-ko.ru/"
+    applicationURL = "jenkins.max-ko.ru"
     applicationURI = "/increment/99"
   }
 

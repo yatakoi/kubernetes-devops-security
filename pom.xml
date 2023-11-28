@@ -20,6 +20,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<tomcat.version>9.0.43</tomcat.version>
+		<spring-security.version>5.4.4</spring-security.version>
 	</properties>
 
 	<dependencies>
@@ -106,7 +107,7 @@
 			<version>6.1.6</version>
 			<configuration>
 				<format>ALL</format>
-				<failBuildOnCVSS>11</failBuildOnCVSS>
+				<failBuildOnCVSS>8</failBuildOnCVSS>
 				<!-- fail the build for CVSS greater than or equal to 5 -->
 				<!-- 
 							use internal mirroring of CVE contents 

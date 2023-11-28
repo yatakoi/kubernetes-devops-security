@@ -115,5 +115,12 @@ pipeline {
         //}
       }
     }
+
+    stage('OWASP ZAP - DAST') {
+      steps {
+          sh 'bash zap.sh'
+      }
+    }
+
   }
 }

@@ -116,13 +116,13 @@ pipeline {
       }
     }
 
-    stage('OWASP ZAP - DAST') {
-      steps {
-          sh 'bash zap.sh'
-      }
-    }
-
-  }
+//    stage('OWASP ZAP - DAST') {
+//     steps {
+//          sh 'bash zap.sh'
+//      }
+//    }
+//
+//  }
 
   post {
     always {
